@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="viewModel"
+            type="id.rrdev.latihanmvvm.viewmodel.MainViewModel" />
+    </data>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        tools:context=".view.MainActivity">
+
+        <EditText
+            android:id="@+id/edt_alas"
+            android:text="@={viewModel.etAlas}"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:layout_marginHorizontal="20dp"
+            android:hint="alas"/>
+
+        <EditText
+            android:id="@+id/edt_tinggi"
+            android:text="@={viewModel.etTinggi}"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:inputType="number"
+            android:hint="tinggi"/>
+
+        <Button
+            android:id="@+id/btn_hitung_luas"
+            android:onClick="@{()-> viewModel.btnLuasSegitiga(context)}"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="20dp"
+            android:text="hitung luas Segitiga"
+            android:layout_marginHorizontal="50dp"
+            android:textColor="@android:color/white"
+            android:background="@color/purple_500"
+            android:layout_gravity="center"/>
+    </LinearLayout>
+</layout>
